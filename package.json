@@ -1,5 +1,5 @@
 {
-	"name": "cfn-hono-bun1",
+	"name": "cfw-hono-bun1",
 	"type": "module",
 	"scripts": {
 		"dev": "wrangler dev",
@@ -16,6 +16,7 @@
 		"hono": "^4.12.31"
 	},
 	"devDependencies": {
+		"bun-types": "^1.3.14",
 		"wrangler": "^4.113.0"
 	}
 }

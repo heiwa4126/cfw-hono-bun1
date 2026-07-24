@@ -1,23 +1,20 @@
-#
+# cfw-hono-bun1
 
-```txt
-npm install
-npm run dev
-```
+Hono と bun で Cloudflare Workers を書くテスト
 
-```txt
-npm run deploy
-```
+```sh
+# インストール
+bun i
+bun audit
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
+# 開発
+bun run dev
+bun run cf-typegen # wrangler.jsoncを編集したら実行
+bun test
 
-```txt
-npm run cf-typegen
-```
+# デプロイ
+bun run deploy
 
-Pass the `CloudflareBindings` as generics when instantiating `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>();
+# 消す
+bun run delete
 ```

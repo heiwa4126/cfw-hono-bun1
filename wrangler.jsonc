@@ -1,6 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "cfn-hono-bun1",
+	"name": "cfw-hono-bun1",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-07-24",
 	// "compatibility_flags": [
