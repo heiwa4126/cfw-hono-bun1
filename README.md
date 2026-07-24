@@ -23,3 +23,18 @@ bun run deploy
 # 消す
 bun run delete
 ```
+
+## これは何のために作ったか、というと
+
+レート制限ルール(rate limit) 
+
+- Cloudflare Worker の「ドメイン」から「カスタムドメインとルーティングする」で、固定の FQDN で Worker を呼べるようにできる
+  - 仮に `iroiro.jp` というドメインを Cloudflare に登録済みで、この workers を　`api.iroiro.jp` で公開したとする
+- Cloudflare はドメインごとにセキュリティルールでレート制限ルールを設定できる(free tier だと 1 個)。仮に以下のように設定したとする。
+  - ルール: `(http.host eq "api.iroiro.jp" and http.request.uri.path eq "/hello" and http.request.method eq "GET")`
+  - レートが次の値を超えた場合... リクエスト 2 期間 10 秒
+  - アクション: ブロック
+  - 期間: 10 秒
+  - 実行順序: 最初
+  - ステータス: アクティブ
+  
