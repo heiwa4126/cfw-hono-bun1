@@ -1,0 +1,21 @@
+{
+	"name": "cfn-hono-bun1",
+	"type": "module",
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --minify",
+		"delete": "wrangler delete",
+		"login": "wrangler login",
+		"login-no-browser": "wrangler login --browser false",
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings",
+		"format": "oxfmt",
+		"lint": "oxlint",
+		"check": "oxfmt && oxlint --fix"
+	},
+	"dependencies": {
+		"hono": "^4.12.31"
+	},
+	"devDependencies": {
+		"wrangler": "^4.113.0"
+	}
+}
