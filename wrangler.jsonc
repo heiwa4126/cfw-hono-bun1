@@ -3,6 +3,21 @@
 	"name": "cfw-hono-bun1",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-07-24",
+	"observability": {
+		"enabled": true,
+		"head_sampling_rate": 1,
+		"logs": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+			"persist": false,
+			"invocation_logs": false,
+		},
+		"traces": {
+			"enabled": true,
+			"persist": false,
+			"head_sampling_rate": 1,
+		},
+	},
 	// "compatibility_flags": [
 	//   "nodejs_compat"
 	// ],
