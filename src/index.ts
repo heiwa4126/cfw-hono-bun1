@@ -1,6 +1,9 @@
 import { Hono } from "hono";
 
-const app = new Hono();
+// const app = new Hono();
+const app = new Hono().basePath("/hello");
+// workers の "Custom Domains and Routes" で
+// https://api.<your-domain>/hello/* でルーティングするようにしたいので1段階層下げている
 
 app
 	.get("/", (c) => {

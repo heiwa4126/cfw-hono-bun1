@@ -13,7 +13,7 @@ if (!domain) {
 	process.exit(1);
 }
 
-const apiUrl = `https://api.${domain}/hello`;
+const apiUrl = `https://api.${domain}/hello/hello`;
 const requestCount = 10;
 const intervalMs = 150; // 100-200ms 間隔
 
@@ -22,7 +22,7 @@ console.log(`📍 API URL: ${apiUrl}`);
 console.log(`📊 Total Requests: ${requestCount}`);
 console.log(`⏱️  Interval: ${intervalMs}ms`);
 console.log(
-	"📌 Expected: First 2 requests should succeed (200), rest may be blocked (429) or error\n",
+	"📌 Expected: First 2 requests should succeed (200), rest may be blocked (429) or error\n"
 );
 
 type RequestResult = {
@@ -43,8 +43,8 @@ async function sendRequest(requestNo: number): Promise<void> {
 		const response = await fetch(apiUrl, {
 			method: "GET",
 			headers: {
-				"User-Agent": "Rate-Limit-Test/1.0",
-			},
+				"User-Agent": "Rate-Limit-Test/1.0"
+			}
 		});
 
 		let message: string | undefined;
@@ -64,7 +64,7 @@ async function sendRequest(requestNo: number): Promise<void> {
 			timestamp,
 			status: response.status,
 			statusText: response.statusText,
-			message: message,
+			message: message
 		};
 
 		results.push(result);
@@ -72,15 +72,15 @@ async function sendRequest(requestNo: number): Promise<void> {
 		// ステータスに応じたログ出力
 		if (response.status === 200) {
 			console.log(
-				`✅ [${requestNo}] ${timestamp} | Status: ${response.status} | Message: ${message}`,
+				`✅ [${requestNo}] ${timestamp} | Status: ${response.status} | Message: ${message}`
 			);
 		} else if (response.status === 429) {
 			console.log(
-				`⚠️  [${requestNo}] ${timestamp} | Status: ${response.status} (Too Many Requests) | ${response.statusText}`,
+				`⚠️  [${requestNo}] ${timestamp} | Status: ${response.status} (Too Many Requests) | ${response.statusText}`
 			);
 		} else {
 			console.log(
-				`⛔ [${requestNo}] ${timestamp} | Status: ${response.status} | ${response.statusText}`,
+				`⛔ [${requestNo}] ${timestamp} | Status: ${response.status} | ${response.statusText}`
 			);
 		}
 	} catch (error) {
@@ -89,7 +89,7 @@ async function sendRequest(requestNo: number): Promise<void> {
 		const result: RequestResult = {
 			requestNo,
 			timestamp,
-			error: errorMessage,
+			error: errorMessage
 		};
 
 		results.push(result);

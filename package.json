@@ -11,8 +11,8 @@
 		"format": "oxfmt",
 		"lint": "oxlint",
 		"check": "oxfmt && oxlint --fix",
-		"rate-limit-test-error": "bun run script/rate-limit-test-error.ts",
-		"rate-limit-test-success": "bun run script/rate-limit-test-success.ts"
+		"rate-limit-test-error": "bun script/rate-limit-test-error.ts",
+		"rate-limit-test-success": "bun script/rate-limit-test-success.ts"
 	},
 	"dependencies": {
 		"hono": "^4.12.31"
