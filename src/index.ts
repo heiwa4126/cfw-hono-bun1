@@ -7,6 +7,7 @@ const app = new Hono().basePath("/hello");
 
 app
 	.get("/", (c) => {
+		// "GET /" は作るべきではなかった...
 		return c.text("Hello Hono!");
 	})
 	.get("/hello", (c) => {

@@ -74,8 +74,8 @@ Custom Domains and Routes →
 "+Add Route"
 で、
 
-- `api.harisekkotsu.jp/hello`
-- `api.harisekkotsu.jp/hello/*`
+- `api.harisekkotsu.jp/hello` ("GET /" のせいで必要)
+- `api.harisekkotsu.jp/hello/*` (ふつうはこっちだけで)
 
 の 2 つのルートを登録。
 
