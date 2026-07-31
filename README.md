@@ -89,3 +89,11 @@ Add record
 - Name: api
 - IPv4 address: 192.0.2.1 (RFC5737 のドキュメント用 IP。実体は何でもよく、実際に到達可能である必要はありません)
 - Proxy status: 必ず「Proxied」(オレンジ雲) にする ← これが重要。DNS only(グレー)だと Cloudflare を経由しないので Worker も動きません
+
+# CORS
+
+- localhost
+- 127.0.0.1
+- (Cloudflare Pages の) `*.pages.dev`
+
+あとは手動で追加してください。
