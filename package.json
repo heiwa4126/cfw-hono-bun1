@@ -15,10 +15,10 @@
 		"rate-limit-test-success": "bun script/rate-limit-test-success.ts"
 	},
 	"dependencies": {
-		"hono": "^4.13.7"
+		"hono": "^4.13.9"
 	},
 	"devDependencies": {
 		"bun-types": "^1.4.2",
-		"wrangler": "^4.131.0"
+		"wrangler": "^4.138.0"
 	}
 }
